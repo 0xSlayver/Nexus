@@ -3,7 +3,7 @@ type FormProps = {
 };
 
 function Form({ children }: FormProps) {
-  return <form className="flex flex-col gap-7">{children}</form>;
+  return <form className="flex flex-col gap-5">{children}</form>;
 }
 
 export default Form;
