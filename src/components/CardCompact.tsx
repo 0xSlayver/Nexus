@@ -21,7 +21,7 @@ function CardCompact({
   footer,
 }: CardCompactProps) {
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm rounded-md">
       <CardHeader>
         <CardTitle className="text-lg">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>

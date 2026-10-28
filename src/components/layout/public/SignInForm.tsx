@@ -9,7 +9,7 @@ function SignInForm() {
         label="Email"
         htmlFor="email"
         id="email"
-        type="text"
+        type="email"
         placeholder="me@example.com"
       />
 
