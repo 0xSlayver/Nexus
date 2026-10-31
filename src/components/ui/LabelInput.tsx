@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-type LabelButtonProps = {
+type LabelInputProps = {
   htmlFor: string;
   id: string;
   type: string;
@@ -10,14 +10,14 @@ type LabelButtonProps = {
   label: string;
 };
 
-function LabelButton({
+function LabelInput({
   htmlFor,
   id,
   type,
   required,
   label,
   placeholder,
-}: LabelButtonProps) {
+}: LabelInputProps) {
   return (
     <div className="grid gap-2">
       <Label htmlFor={htmlFor}>{label}</Label>
@@ -32,4 +32,4 @@ function LabelButton({
   );
 }
 
-export default LabelButton;
+export default LabelInput;

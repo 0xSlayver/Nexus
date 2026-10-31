@@ -1,10 +1,10 @@
 import Form from "@/components/ui/Form";
-import LabelButton from "@/components/ui/LabelButton";
+import LabelInput from "@/components/ui/LabelInput";
 
 function SignUpForm() {
   return (
     <Form>
-      <LabelButton
+      <LabelInput
         label="Name"
         htmlFor="name"
         id="name"
@@ -12,7 +12,7 @@ function SignUpForm() {
         placeholder="John Doe"
       />
 
-      <LabelButton
+      <LabelInput
         label="Email"
         htmlFor="email"
         id="email"
@@ -20,14 +20,14 @@ function SignUpForm() {
         placeholder="me@example.com"
       />
 
-      <LabelButton
+      <LabelInput
         label="Password"
         htmlFor="password"
         id="password"
         type="password"
       />
 
-      <LabelButton
+      <LabelInput
         label="Confirm Password"
         htmlFor="confirmPassword"
         id="confirmPassword"

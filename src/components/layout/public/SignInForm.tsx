@@ -1,11 +1,11 @@
 import Form from "@/components/ui/Form";
-import LabelButton from "@/components/ui/LabelButton";
+import LabelInput from "@/components/ui/LabelInput";
 import Link from "next/link";
 
 function SignInForm() {
   return (
     <Form>
-      <LabelButton
+      <LabelInput
         label="Email"
         htmlFor="email"
         id="email"
@@ -14,7 +14,7 @@ function SignInForm() {
       />
 
       <div className="flex flex-col gap-2">
-        <LabelButton
+        <LabelInput
           label="Password"
           htmlFor="password"
           id="password"
