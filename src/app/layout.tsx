@@ -38,7 +38,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="container m-auto">
-        <ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <Separator />
           {children}

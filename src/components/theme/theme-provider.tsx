@@ -1,10 +1,16 @@
+"use client";
+
 import { ThemeProvider as BaseThemeProvider } from "next-themes";
+import type { ThemeProviderProps } from "next-themes";
 
-type ThemeProviderProps = { children: React.ReactNode };
+function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  const scriptProps =
+    typeof window === "undefined"
+      ? undefined
+      : { type: "application/json" as const };
 
-function ThemeProvider({ children }: ThemeProviderProps) {
   return (
-    <BaseThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
+    <BaseThemeProvider {...props} scriptProps={scriptProps}>
       {children}
     </BaseThemeProvider>
   );
