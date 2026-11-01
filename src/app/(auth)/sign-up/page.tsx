@@ -11,7 +11,7 @@ function SignupPage() {
         title="Create a new account!"
         footer={
           <div className="flex w-full flex-col items-center gap-2">
-            <Button size={"icon"} type="submit" className="w-full">
+            <Button size={"icon-lg"} type="submit" className="w-full">
               Create Account
             </Button>
             <Link href={signInPath()} className="flex items-center gap-1">
