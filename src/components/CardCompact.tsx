@@ -11,7 +11,7 @@ type CardCompactProps = {
   title: string;
   description?: string;
   children: React.ReactNode;
-  footer: React.ReactNode | string;
+  footer?: React.ReactNode | string;
 };
 
 function CardCompact({
@@ -23,11 +23,11 @@ function CardCompact({
   return (
     <Card className="w-full max-w-sm rounded-md">
       <CardHeader>
-        <CardTitle className="text-lg">{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardTitle className="text-lg font-semibold">{title}</CardTitle>
+        {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>{children}</CardContent>
-      <CardFooter>{footer}</CardFooter>
+      {footer && <CardFooter>{footer}</CardFooter>}
     </Card>
   );
 }
