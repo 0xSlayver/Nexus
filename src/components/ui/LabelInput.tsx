@@ -1,32 +1,42 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  type FieldValues,
+  type Path,
+  type RegisterOptions,
+  type UseFormRegister,
+} from "react-hook-form";
 
-type LabelInputProps = {
-  htmlFor: string;
-  id: string;
-  type: string;
+type LabelInputProps<T extends FieldValues> = {
+  name: Path<T>;
+  type?: string;
   required?: boolean;
   placeholder?: string;
   label: string;
+  register: UseFormRegister<T>;
+  rules?: RegisterOptions<T, Path<T>>;
 };
 
-function LabelInput({
-  htmlFor,
-  id,
-  type,
+function LabelInput<T extends FieldValues>({
+  name,
+  type = "text",
   required,
   label,
   placeholder,
-}: LabelInputProps) {
+  register,
+  rules,
+}: LabelInputProps<T>) {
   return (
     <div className="grid gap-2">
-      <Label htmlFor={htmlFor}>{label}</Label>
+      <Label htmlFor={name}>{label}</Label>
+
       <Input
-        id={id}
+        id={name}
         type={type}
         placeholder={placeholder}
         required={required}
         className="py-5"
+        {...register(name, rules)}
       />
     </div>
   );

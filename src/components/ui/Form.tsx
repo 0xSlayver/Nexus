@@ -1,9 +1,13 @@
-type FormProps = {
-  children: React.ReactNode;
-};
+import type { ComponentProps } from "react";
 
-function Form({ children }: FormProps) {
-  return <form className="flex flex-col gap-5">{children}</form>;
+type FormProps = ComponentProps<"form">;
+
+function Form({ children, className, ...props }: FormProps) {
+  return (
+    <form {...props} className={`flex flex-col gap-5 ${className ?? ""}`}>
+      {children}
+    </form>
+  );
 }
 
 export default Form;
