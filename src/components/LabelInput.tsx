@@ -15,6 +15,7 @@ type LabelInputProps<T extends FieldValues> = {
   label: string;
   register: UseFormRegister<T>;
   rules?: RegisterOptions<T, Path<T>>;
+  error?: string;
 };
 
 function LabelInput<T extends FieldValues>({
@@ -25,16 +26,23 @@ function LabelInput<T extends FieldValues>({
   placeholder,
   register,
   rules,
+  error,
 }: LabelInputProps<T>) {
   return (
     <div className="grid gap-2">
-      <Label htmlFor={name}>{label}</Label>
+      <div className="flex items-center gap-2">
+        <Label htmlFor={name}>{label}</Label>
+
+        <span className="text-destructive text-xs">{error ?? ""}</span>
+      </div>
 
       <Input
         id={name}
         type={type}
         placeholder={placeholder}
         required={required}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${name}-error` : undefined}
         className="py-5"
         {...register(name, rules)}
       />
